@@ -1,0 +1,68 @@
+# Canal infantil educativo. Revisa "name" antes del primer run.
+channel:
+  name: "Mi Canal"
+  niche: "videos educativos y curiosos para niños: animales, espacio, cuerpo humano, naturaleza, ciencia sencilla y valores"
+  audience: "niños de 6 a 12 años (escribe con vocabulario que entienda un niño de 7 u 8 años)"
+  language: "es-MX"
+  category_id: "27"          # 27 = Educación
+  default_tags: ["para niños", "educativo", "aprender jugando"]
+  made_for_kids: true        # OBLIGATORIO para este nicho (COPPA). No cambiar.
+
+llm:
+  model: "claude-sonnet-5-5"
+
+tts:
+  voices: ["es-MX-DaliaNeural", "es-MX-JorgeNeural"]
+  rate: "-8%"                # más lento: público infantil
+
+publish:
+  privacy: "public"
+  short_delay_hours: 4
+
+formats:
+  - name: "por_que"
+    desc: "Responde una pregunta que hacen los niños (¿por qué el cielo es azul?) paso a paso, con ejemplos de su vida diaria."
+  - name: "animal_del_dia"
+    desc: "Presenta un animal: dónde vive, qué come, 3 a 5 datos sorprendentes y cómo cuidarlo o protegerlo."
+  - name: "viaje_al_espacio"
+    desc: "Explora un planeta, estrella o fenómeno del espacio como si fuera un viaje."
+  - name: "cuento_con_valor"
+    desc: "Cuento corto original con personajes animales y un valor (amistad, paciencia, honestidad) al final, sin sermonear."
+  - name: "datos_increibles"
+    desc: "5 datos increíbles sobre un tema, cada uno explicado con una comparación fácil."
+  - name: "mi_cuerpo"
+    desc: "Explica cómo funciona una parte del cuerpo y un hábito sano relacionado."
+
+# Colores saturados pero con buen contraste para texto blanco. [fondo1, fondo2, acento]
+palettes:
+  - ["#1d4ed8", "#7c3aed", "#fde047"]
+  - ["#0f766e", "#0284c7", "#fef08a"]
+  - ["#be185d", "#7c3aed", "#a7f3d0"]
+  - ["#c2410c", "#be123c", "#fef3c7"]
+  - ["#15803d", "#0e7490", "#fde68a"]
+
+character:
+  enabled: true   # personaje animado (prototipo "Pipo"); false = diapositivas estáticas
+
+# "song" = canción infantil con Pipo (video completo + Short ≤58 s). "narration" = guion narrado.
+content:
+  mode: "song"
+
+song:
+  bpm: null         # null = según el estilo de cada canción; un número lo fija para todas
+  rate: "+0%"       # velocidad de la voz al decir la letra (la voz y el tono van por personaje)
+
+# Tipo de canción: rota por día (determinista). Cambia la forma de la letra, no solo el tema.
+song_styles:
+  - name: "datos"
+    desc: "Canción que enseña datos curiosos sobre un animal, planeta o cosa de la naturaleza."
+  - name: "contar"
+    desc: "Canción para contar del 1 al 5 (o al 10) usando el tema; cada estrofa suma algo."
+  - name: "movimiento"
+    desc: "Canción de acción: el coro pide moverse (aplaudir, saltar, girar) de forma segura y en su lugar."
+  - name: "pregunta_respuesta"
+    desc: "Cada estrofa hace una pregunta y la responde; el coro repite la pregunta principal."
+  - name: "rutina"
+    desc: "Canción de un hábito sano (lavarse los dientes, guardar juguetes, dormir) paso a paso."
+  - name: "emociones"
+    desc: "Canción que nombra una emoción, cómo se siente en el cuerpo y qué hacer con ella."
