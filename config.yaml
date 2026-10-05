@@ -16,7 +16,7 @@ tts:
   rate: "-8%"                # más lento: público infantil
 
 publish:
-  privacy: "public"
+  privacy: "private"   # primera prueba; cambiar a "public" con la auditoría aprobada
   short_delay_hours: 4
 
 formats:
